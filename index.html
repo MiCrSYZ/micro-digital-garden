@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Micro's quiet digital garden for flowers that never wilt.">
+  <meta name="theme-color" content="#f8efe2">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B7%3C/text%3E%3C/svg%3E">
+  <title>Micro's Digital Garden</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <p class="eyebrow"><span aria-hidden="true">✦</span> Est. 2026 · always in bloom</p>
+      <h1>Micro's Digital Garden</h1>
+      <p class="tagline">A version-controlled garden for flowers that never wilt.</p>
+      <p class="micro-note">Micro is a tiny munchkin cheese tabby cat. <span aria-hidden="true">🐾</span></p>
+    </header>
+
+    <main>
+      <section class="garden-card" aria-labelledby="garden-title">
+        <div class="garden-toolbar">
+          <div>
+            <p class="section-label">THE GARDEN</p>
+            <h2 id="garden-title">A small place for lasting things</h2>
+          </div>
+          <p class="drag-hint"><span aria-hidden="true">↔</span> Drag a bouquet to rearrange it</p>
+        </div>
+
+        <div class="garden" id="garden" aria-live="polite">
+          <div class="sun-glow" aria-hidden="true"></div>
+          <div class="cloud cloud-one" aria-hidden="true"></div>
+          <div class="cloud cloud-two" aria-hidden="true"></div>
+
+          <div class="distant-shrubs" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+
+          <div class="garden-path" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i>
+          </div>
+
+          <div class="flower-bed" aria-label="A flower bed" role="img">
+            <span class="bed-sign">perennials</span>
+            <div class="tiny-flowers" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+
+          <div class="cafe-table" aria-label="A wooden café table" role="img">
+            <div class="table-top"><span class="tea-cup">♡</span><span class="tiny-vase">✿</span></div>
+            <i class="table-leg"></i>
+            <i class="chair chair-left"></i>
+            <i class="chair chair-right"></i>
+          </div>
+
+          <div class="cat-nook" aria-label="A tiny cat resting nook" role="img">
+            <span class="nook-label">MICRO'S NOOK</span>
+            <div class="cat-cushion"></div>
+            <div class="css-cat sleeping-cat" aria-hidden="true">
+              <i class="cat-tail"></i><i class="cat-body"></i><i class="cat-head"></i><i class="cat-ear left"></i><i class="cat-ear right"></i><i class="cat-face">˘ ﻌ ˘</i>
+            </div>
+          </div>
+
+          <div class="css-cat wandering-cat" aria-hidden="true">
+            <i class="cat-tail"></i><i class="cat-body"></i><i class="cat-head"></i><i class="cat-ear left"></i><i class="cat-ear right"></i><i class="cat-face">• ﻌ •</i>
+          </div>
+
+          <div class="bouquet-layer" id="bouquet-layer"></div>
+          <p class="garden-status" id="garden-status">Planting the garden…</p>
+        </div>
+      </section>
+
+      <p class="footer-note"><span aria-hidden="true">❦</span> Carefully tended, one memory at a time.</p>
+    </main>
+  </div>
+
+  <div class="modal" id="bouquet-modal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-message">
+      <button class="modal-close" type="button" aria-label="Close bouquet details" data-close-modal>×</button>
+      <p class="modal-kicker" id="modal-occasion"></p>
+      <div class="modal-bloom" aria-hidden="true">✿</div>
+      <h2 id="modal-title"></h2>
+      <p class="planted-date" id="modal-year"></p>
+      <p class="modal-message" id="modal-message"></p>
+      <a class="visit-link" id="modal-link" href="#">Visit bouquet <span aria-hidden="true">→</span></a>
+    </section>
+  </div>
+
+  <noscript>This garden needs JavaScript enabled to plant its bouquets.</noscript>
+  <script src="garden.js" defer></script>
+</body>
+</html>

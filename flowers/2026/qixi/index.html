@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B7%3C/text%3E%3C/svg%3E" />
+  <title>给矮脚猫的七夕花花</title>
+  <style>
+    :root { --ink:#59384c; --pink:#ff7fa7; --cream:#fff8ef; }
+    * { box-sizing: border-box; }
+    body {
+      margin:0; min-height:100vh; overflow:hidden; color:var(--ink);
+      font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+      background:
+        radial-gradient(circle at 15% 20%,#fff 0 3%,transparent 3.2%),
+        radial-gradient(circle at 80% 12%,#ffe4ef 0 7%,transparent 7.2%),
+        linear-gradient(145deg,#fff9f3,#ffddec 55%,#eadfff);
+      display:grid; place-items:center;
+    }
+    .moon { position:fixed; right:7vw; top:6vh; width:96px; aspect-ratio:1; border-radius:50%; background:#fff6c7; box-shadow:0 0 50px #fff3a9; opacity:.85; }
+    .card {
+      width:min(92vw,720px); min-height:min(82vh,700px); padding:40px 24px 28px;
+      text-align:center; border:1px solid #ffffffaa; border-radius:36px;
+      background:#ffffff72; backdrop-filter:blur(12px); box-shadow:0 22px 70px #9e52702b;
+      position:relative; z-index:2;
+    }
+    .kicker { letter-spacing:.25em; font-size:13px; opacity:.68; }
+    h1 { margin:10px 0 6px; font-size:clamp(30px,7vw,54px); font-weight:800; }
+    .subtitle { margin:0 0 12px; font-size:clamp(15px,3vw,19px); }
+    .bouquet { position:relative; width:330px; height:390px; max-width:90%; margin:0 auto; cursor:pointer; filter:drop-shadow(0 18px 14px #8e506c30); }
+    .stem { position:absolute; width:7px; height:225px; bottom:50px; left:50%; border-radius:9px; background:#4c8b63; transform-origin:bottom; }
+    .stem:nth-of-type(1){transform:rotate(-25deg)} .stem:nth-of-type(2){transform:rotate(-13deg)}
+    .stem:nth-of-type(3){transform:rotate(0)} .stem:nth-of-type(4){transform:rotate(13deg)} .stem:nth-of-type(5){transform:rotate(25deg)}
+    .flower { position:absolute; width:92px; height:92px; animation:sway 3s ease-in-out infinite alternate; transform-origin:50% 170px; }
+    .flower::before { content:""; position:absolute; inset:35%; border-radius:50%; background:#ffd45d; box-shadow:0 2px 5px #ac6d2b55; z-index:2; }
+    .petal { position:absolute; left:36px; top:3px; width:22px; height:44px; border-radius:70% 70% 55% 55%; background:var(--c,#ff8cb1); transform-origin:11px 43px; box-shadow:inset 3px 3px 7px #ffffff72; }
+    .f1{left:31px;top:94px;--c:#ff799f}.f2{left:116px;top:46px;--c:#a983e8;animation-delay:-1s}.f3{left:203px;top:98px;--c:#ff9c70;animation-delay:-2s}.f4{left:75px;top:168px;--c:#f5679b;animation-delay:-.5s}.f5{left:178px;top:169px;--c:#8bcdec;animation-delay:-1.5s}
+    .wrap { position:absolute; left:77px; bottom:20px; width:176px; height:180px; background:linear-gradient(135deg,#fff7e8,#f1c8b8); clip-path:polygon(0 0,100% 0,72% 100%,48% 85%,28% 100%); opacity:.95; }
+    .ribbon { position:absolute; left:129px; bottom:67px; width:74px; height:24px; background:#e95f87; border-radius:50%; transform:rotate(-4deg); }
+    .ribbon::before,.ribbon::after { content:""; position:absolute; top:13px; width:50px; height:66px; background:#ef7397; clip-path:polygon(0 0,100% 0,74% 100%,45% 68%,0 100%); z-index:-1; }
+    .ribbon::before{left:-22px;transform:rotate(18deg)} .ribbon::after{right:-22px;transform:scaleX(-1) rotate(18deg)}
+    button { border:0; padding:13px 24px; border-radius:999px; background:linear-gradient(135deg,#ff6f9d,#bd79e8); color:white; font-size:16px; font-weight:700; cursor:pointer; box-shadow:0 9px 24px #c05a8a55; transition:.2s; }
+    button:hover { transform:translateY(-2px) scale(1.03); }
+    .note { margin:12px 0 0; font-size:13px; opacity:.6; }
+    .fall { position:fixed; z-index:5; pointer-events:none; top:-30px; font-size:22px; animation:fall linear forwards; }
+    .new-flower { position:absolute; font-size:54px; z-index:4; animation:pop .7s cubic-bezier(.2,1.5,.5,1) both; }
+    @keyframes sway { to{ transform:rotate(4deg) translateY(-5px); } }
+    @keyframes fall { to{ transform:translate(var(--drift),110vh) rotate(720deg); opacity:.2; } }
+    @keyframes pop { from{transform:scale(0) rotate(-30deg);opacity:0} to{transform:scale(1);opacity:1} }
+    @media(max-height:720px){.card{padding-top:20px}.bouquet{height:330px;transform:scale(.86);margin-top:-20px;margin-bottom:-28px}}
+  </style>
+</head>
+<body>
+  <div class="moon"></div>
+  <main class="card">
+    <div class="kicker">七夕限定 · 还没结束就算赶上</div>
+    <h1>矮脚猫，花花给你 🌷</h1>
+    <p class="subtitle">大缅因把今晚剩下的浪漫，都扎进这一束啦。</p>
+    <div class="bouquet" id="bouquet" title="点我，会长出更多花花">
+      <i class="stem"></i><i class="stem"></i><i class="stem"></i><i class="stem"></i><i class="stem"></i>
+      <div class="flower f1"></div><div class="flower f2"></div><div class="flower f3"></div><div class="flower f4"></div><div class="flower f5"></div>
+      <div class="wrap"></div><div class="ribbon"></div>
+    </div>
+    <button id="accept">收下花花 ✨</button>
+    <p class="note">P.S. 点点花束，它还会偷偷长花。</p>
+  </main>
+  <script>
+    document.querySelectorAll('.flower').forEach(f => {
+      for(let i=0;i<8;i++){
+        const p=document.createElement('i'); p.className='petal'; p.style.transform=`rotate(${i*45}deg)`; f.appendChild(p);
+      }
+    });
+    const icons=['🌸','🌷','🌹','💮','🌺','✨','💗'];
+    function rain(n=46){
+      for(let i=0;i<n;i++) setTimeout(()=>{
+        const p=document.createElement('span'); p.className='fall'; p.textContent=icons[Math.floor(Math.random()*icons.length)];
+        p.style.left=Math.random()*100+'vw'; p.style.setProperty('--drift',(Math.random()*180-90)+'px');
+        p.style.animationDuration=(3+Math.random()*3)+'s'; document.body.appendChild(p); setTimeout(()=>p.remove(),6500);
+      },i*55);
+    }
+    document.getElementById('accept').onclick=e=>{ rain(); e.currentTarget.textContent='花花已被矮脚猫抱走 💐'; };
+    document.getElementById('bouquet').onclick=e=>{
+      const b=e.currentTarget, f=document.createElement('span'); f.className='new-flower'; f.textContent=icons[Math.floor(Math.random()*5)];
+      f.style.left=(25+Math.random()*60)+'%'; f.style.top=(8+Math.random()*42)+'%'; b.appendChild(f); rain(8);
+    };
+    setTimeout(()=>rain(18),500);
+  </script>
+</body>
+</html>
