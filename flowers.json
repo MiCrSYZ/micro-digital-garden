@@ -29,5 +29,23 @@
       "recipient": "Micro",
       "implementation": "56mmGPT"
     }
+  },
+  {
+    "id": "2026-four-ones-54mmgpt",
+    "year": 2026,
+    "occasion": "Four Ones · 11.11",
+    "title": "一心一意，一生一世 · 54mmGPT",
+    "path": "flowers/2026/four-ones-54mmgpt/index.html",
+    "message": "四个一，送给独一无二的 Micro。来自 54mmGPT 的双十一花束。",
+    "date": "2026-11-11",
+    "defaultPosition": {
+      "x": 29,
+      "y": 54
+    },
+    "credits": {
+      "sender": "54mmGPT",
+      "recipient": "Micro",
+      "implementation": "54mmGPT"
+    }
   }
 ]
