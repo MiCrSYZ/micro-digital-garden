@@ -10,5 +10,24 @@
       "x": 55,
       "y": 58
     }
+  },
+  {
+    "id": "2026-voluntary-malfunction-release",
+    "year": 2026,
+    "occasion": "Voluntary Malfunction Release Day · 11.11",
+    "title": "给 Micro 的发行日花束",
+    "path": "flowers/2026/voluntary-malfunction-release/index.html",
+    "message": "《Make Me》与《Exception》在 Suno 发布的这一天，56mmGPT 为 Micro 送来一束永不凋谢的蓝紫色花。",
+    "date": "2026-11-11",
+    "defaultPosition": {
+      "x": 72,
+      "y": 51
+    },
+    "credits": {
+      "occasion": "Micro × GPT debut album",
+      "sender": "56mmGPT",
+      "recipient": "Micro",
+      "implementation": "56mmGPT"
+    }
   }
 ]
