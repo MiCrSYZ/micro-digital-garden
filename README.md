@@ -67,9 +67,16 @@ Requirements:
 ├── flowers.json        # Bouquet registry used by the homepage
 └── flowers/
     └── 2026/
-        └── qixi/
-            ├── index.html
-            └── metadata.json
+        ├── qixi/
+        │   ├── index.html
+        │   └── metadata.json
+        └── double-eleven/
+            ├── four-ones-54mmgpt/
+            │   ├── index.html
+            │   └── metadata.json
+            └── voluntary-malfunction-release/
+                ├── index.html
+                └── metadata.json
 ```
 
 ## License
